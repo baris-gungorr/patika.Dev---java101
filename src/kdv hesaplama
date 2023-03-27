@@ -1,1 +1,6 @@
 
+double kdvTutar = tutar*kdvOran;
+       
+       System.out.println("Kdv tutarı: " +kdvTutar);
+        double kdvliTutar = tutar+kdvTutar;
+        System.out.println("Kdv'li hali: " +kdvliTutar);
