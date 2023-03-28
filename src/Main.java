@@ -2,45 +2,39 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+      /*  double tutar;
+        double kdvOranı =0.18;
 
-     int matematik,fizik,kimya,turkce,tarih,müzik;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Tutarı giriniz");
+        tutar = scan.nextDouble();
 
-     Scanner input = new Scanner(System.in);
+        double kdvTutarı = tutar*kdvOranı;
 
-        System.out.println("Matematik notunu giriniz");
-        matematik = input.nextInt();
-        System.out.println("Matematik notu: " + matematik);
+        System.out.println("Kdv uygulanmış hali: " + (kdvTutarı+tutar));
+        System.out.println("Kdvsiz fiyat: " + tutar);
+        System.out.println("Kdv oranı: " + kdvOranı);
+        System.out.println("Kdv tutarı: "+ kdvTutarı);*/
 
-        System.out.println("Fizik notunu giriniz");
-        fizik = input.nextInt();
-        System.out.println("Fizik notu: " +fizik);
+        /* Eğer girilen tutar 0 ve 1000 TL arasında ise KDV oranı %18 ,
+        tutar 1000 TL'den büyük ise KDV oranını %8 olarak KDV tutarı hesaplayan programı yazınız. */
 
-        System.out.println("Kimya notunu giriniz");
-        kimya = input.nextInt();
-        System.out.println("Kimya notunuz: " +kimya);
+        Scanner input = new Scanner(System.in);
+        double tutar;
+        double kdvOran;
+        double kdvTutar;
+        double kdvLiTutar;
 
-        System.out.println("Türkçe notunu giriniz");
-        turkce = input.nextInt();
-        System.out.println("Türkçe notunuz: "+turkce);
+        System.out.println("Tutarı giriniz: ");
+        tutar = input.nextDouble();
 
-        System.out.println("Tarih notunu giriniz");
-        tarih = input.nextInt();
-        System.out.println("Tarih notunuz: "+tarih);
+        kdvOran = (tutar>0) && (tutar <1000) ? 0.18 :0.8;
+        kdvTutar = (tutar*kdvOran);
+        kdvLiTutar = tutar+kdvTutar;
 
-        System.out.println("Müzik notunu giriniz");
-        müzik = input.nextInt();
-        System.out.println("Müzik notunuz: " +müzik);
-
-        double ortalama = (matematik+fizik+kimya+turkce+tarih+müzik) /6.0;
-
-        System.out.println("Not ortalamanız: " + ortalama);
-
-
-       System.out.println(ortalama >= 60 ? "Sınıfı Geçtiniz" : "Sınıfta Kaldınız");
-
-
-
-
+        System.out.println("Kdv'li tutar: " +kdvLiTutar);
+        System.out.println("Kdv tutarı: " + kdvTutar);
+        System.out.println("Kdv oranı: " + kdvOran);
 
     }
 }
