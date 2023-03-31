@@ -16,7 +16,7 @@ public class Main {
         s3 = sca.nextInt();
         System.out.println(s3);
                                                       
-        if ((s1 < s2) && (s1 < s3)) {                 /
+        if ((s1 < s2) && (s1 < s3)) {                 
       if ( s2 < s3) {                                
           System.out.println("s1 < s2 < s3");
       }else {
