@@ -1,45 +1,66 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        /*
+        Kişi 12 yaşından küçükse bilet fiyatı üzerinden %50 indirim uygulanır.
+        Kişi 12-24 yaşları arasında ise bilet fiyatı üzerinden %10 indirim uygulanır.
+        Kişi 65 yaşından büyük ise bilet fiyatı üzerinden %30 indirim uygulanır.
+        Kişi "Yolculuk Tipini" gidiş dönüş seçmiş ise bilet fiyatı üzerinden %20 indirim uygulanır. */
 
-        Scanner input = new Scanner(System.in);
+        Scanner sca = new Scanner(System.in);
 
-        // Kullanıcıdan Mesafe (KM), Yaş ve Yolculuk Tipi (Tek Yön, Gidiş-Dönüş) bilgilerini alın
-        System.out.print("Mesafeyi km türünden giriniz: ");
-        int mesafe = input.nextInt();
-        System.out.print("Yaşınızı giriniz: ");
-        int yas = input.nextInt();
-        System.out.print("Yolculuk tipini giriniz (1 => Tek Yön, 2 => Gidiş-Dönüş): ");
-        int yolculukTipi = input.nextInt();
+        double km,bilet,indBilet;
+        int yas,tarife;
 
-        // Hatalı veri girişi kontrolü
-        if (mesafe <= 0 || yas <= 0 || (yolculukTipi != 1 && yolculukTipi != 2)) {
-            System.out.println("Hatalı Veri Girdiniz !");
-            return;
+        System.out.print("Mesafeyi km cinsinden giriniz: ");
+        km = sca.nextDouble();
+        System.out.print("Yaşınızı Giriniz: ");
+        yas = sca.nextInt();
+        System.out.print("Yolculuk tipini giriniz (Tek yön (>1<)  Gidiş dönüş (>2<) ");
+        tarife = sca.nextInt();
+        bilet = km*0.10;
+
+        if (yas > 0 && km>0) {
+            if (yas < 12) {
+                indBilet = bilet-(bilet*0.5);
+            switch (tarife) {
+                case 1:
+                    System.out.println("Bilet tutarınız: " + indBilet);
+                    break;
+                case 2:
+                    System.out.println("Bilet tutarınız: " + ((indBilet-(indBilet*0.2))));
+                    break;
+                default:
+                    System.out.println("Hatalı giriş");
+            }
+            } else if (yas >12 && yas<24) {
+                indBilet = bilet-(bilet*0.5);
+                switch (tarife) {
+                    case 1:
+                        System.out.println("Bilet tutarınız: " +indBilet);
+                        break;
+                    case 2:
+                        System.out.println("Bilet tutarınız: " +(indBilet-(indBilet*0.2)));
+                        break;
+                    default:
+                        System.out.println("Hatalı giriş");
+                }
+            } else if (yas>65) {
+                indBilet = bilet-(bilet*0.30);
+              switch (tarife) {
+                  case 1:
+                      System.out.println("Bilet tutarınız: " + indBilet);
+                      break;
+                  case 2:
+                      System.out.println("Bilet tutarınız: " + (indBilet-(indBilet*0.2)));
+                  default:
+                      System.out.println("Hatalı giriş yaptınız");
+              }
+            } else {
+                System.out.println("Bilet ücretiniz:" +bilet);
+         }
+        }else {
+            System.out.println("Hatalı veri girdiniz");
         }
-
-        // Mesafe başına ücret 0,10 TL / km olarak alınır.
-        double birimFiyat = 0.10;
-        double toplamFiyat = mesafe * birimFiyat;
-
-        // Yaşa göre indirim uygulanır
-        if (yas < 12) {
-            toplamFiyat *= 0.5; // %50 indirim
-        } else if (yas >= 12 && yas <= 24) {
-            toplamFiyat *= 0.9; // %10 indirim
-        } else if (yas >= 65) {
-            toplamFiyat *= 0.7; // %30 indirim
         }
-
-        // Yolculuk tipine göre indirim uygulanır
-        if (yolculukTipi == 2) {
-            toplamFiyat *= 2; // normal fiyatın 2 katı
-            toplamFiyat *= 0.8; // %20 indirim
-        }
-
-        // Sonuçları ekrana yazdırın
-        System.out.println("Toplam Tutar: " + toplamFiyat + " TL");
     }
-}
-
-
