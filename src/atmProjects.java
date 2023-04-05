@@ -51,7 +51,7 @@ public class Main {
                     System.out.println("Bakiyeniz: " + balance);
                         break;
                 }
-                }while (select != 4);
+                }while (select != 4); // select 4 e eşit olmadığı sürece döngüye devam et diyoruz
                 System.out.println("Sistemden Çıkılıyor...");
                 System.out.println("Sağlıcakla kalın");
 
