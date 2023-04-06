@@ -1,29 +1,34 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-      
-      Scanner input = new Scanner(System.in);
-        double sonuc;
+     
+      Scanner scan = new Scanner(System.in);
+      double boy;
+      double kilo;
+      double bmı;
 
-        double boy;
-        System.out.println("Boy bilginizi cm cinsinden yazınız (182): ");
-        boy = input.nextDouble();
-        System.out.println("Girilen boy: " +boy);
+      System.out.println("Boyunuzu girin");
+      boy = scan.nextDouble();
+      System.out.println("Boyunuz: " + boy);
+      System.out.println("Kilonuzu girin");
+      kilo = scan.nextDouble();
+      System.out.println("Kilonuz: " + kilo);
 
-        double kilo;
-        System.out.println("Kilo bilginizi km cinsinden giriniz: ");
-        kilo = input.nextDouble();
-        System.out.println("Girdiğiniz kilo: " + kilo);
+         bmı = kilo / (boy*boy);
 
-
-         sonuc = kilo/(boy * boy);
-
-
-        System.out.println("Boyunuz: " + boy);
-        System.out.println("Kilonuz: " + kilo);
-
-// Girdileri virgül ile yapmayı unutmayın !
-        System.out.println("Vücut kitle endeksiniz: " + sonuc); 
-
+        if (bmı >= 0 && bmı <= 18) {
+            System.out.println("Zayıf");
+        } else if (bmı >= 18 && bmı <= 24) {
+            System.out.println("Normal ağırlık");
+        } else if (bmı >=25 && bmı <=30) {
+            System.out.println("Kilolu");
+        } else if (bmı >= 30 && bmı <= 35) {
+            System.out.println("1.Derece obezite");
+        } else if (bmı >=35 && bmı <= 40) {
+            System.out.println("2.Derece obezite");
+        }else if (bmı >= 30) {
+            System.out.println("Profesyonel bir destek alın.");
+        }
+        System.out.println("Beden kitle endeksiniz: " + bmı);
     }
 }
