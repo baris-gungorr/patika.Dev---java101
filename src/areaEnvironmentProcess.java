@@ -34,7 +34,7 @@ public class Main {
         a = input1.nextInt();
         System.out.println(a);
 
-        double formül = ((pii*(rr*rr)*a)/360);
+        double formül = (pii*(rr*rr)*a)/360);
 
         System.out.println("Daire diliminin alanı: " + formül);
 
