@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Boyunuz: " + boy);
         System.out.println("Kilonuz: " + kilo);
 
-
+// Girdileri virgül ile yapmayı unutmayın !
         System.out.println("Vücut kitle endeksiniz: " + sonuc); 
 
     }
