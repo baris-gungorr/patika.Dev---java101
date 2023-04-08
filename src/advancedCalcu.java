@@ -1,81 +1,55 @@
 import java.util.Scanner;
+
 public class Main {
 
     static void plus() {
         Scanner scan = new Scanner(System.in);
-        int number, result = 0, i = 1;
-        while (true) {
-            System.out.print(i++ + ". sayı :");
-            number = scan.nextInt();
-            if (number == 0) {
-                break;
-            }
-            result += number;
-        }
-        System.out.println("Sonuç : " + result);
+        int n1,n2;
+        int islem;
+        System.out.println("ilk sayıyı girin");
+        n1 = scan.nextInt();
+        System.out.println("İkinci sayıyı girin");
+        n2 = scan.nextInt();
+        islem = n1+n2;
+        System.out.println("İşlem sonucu" + islem);
     }
 
     static void minus() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Kaç adet sayı gireceksiniz :");
-        int counter = scan.nextInt();
-        int number, result = 0;
+        int n1,n2;
+        int islem;
+        System.out.println("ilk sayıyı girin");
+        n1 = scan.nextInt();
+        System.out.println("İkinci sayıyı girin");
+        n2= scan.nextInt();
+        islem = (n1-n2);
+        System.out.println("İşlem sonucu:" + islem);
 
-        for (int i = 1; i <= counter; i++) {
-            System.out.print(i + ". sayı :");
-            number = scan.nextInt();
-            if (i == 1) {
-                result += number;
-                continue;
-            }
-            result -= number;
-        }
-
-        System.out.println("Sonuç : " + result);
     }
 
     static void times() {
-        Scanner scan = new Scanner(System.in);
-        int number, result = 1, i = 1;
-
-        while (true) {
-            System.out.print(i++ + ". sayı :");
-            number = scan.nextInt();
-
-            if (number == 1)
-                break;
-
-            if (number == 0) {
-                result = 0;
-                break;
-            }
-            result *= number;
-        }
-
-        System.out.println("Sonuç : " + result);
+       Scanner scan = new Scanner(System.in);
+       int a,b;
+       int islem;
+        System.out.println("Birinci sayı:");
+        a = scan.nextInt();
+        System.out.println("ikinci sayı:");
+        b = scan.nextInt();
+        islem = a*b;
     }
 
     static void divided() {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Kaç adet sayı gireceksiniz :");
-        int counter = scan.nextInt();
-        double number, result = 0.0;
-
-        for (int i = 1; i <= counter; i++) {
-            System.out.print(i + ". sayı :");
-            number = scan.nextDouble();
-            if (i != 1 && number == 0) {
-                System.out.println("Böleni 0 giremezsiniz.");
-                continue;
-            }
-            if (i == 1) {
-                result = number;
-                continue;
-            }
-            result /= number;
+        int a ,b;
+        System.out.println("Bölünen sayıyı girin:");
+        a = scan.nextInt();
+        System.out.println("Bölen sayıyı girin:");
+        b = scan.nextInt();
+        if (b == 0) {
+            System.out.println("Bir sayı 0 a bölünemez.");
+        }else {
+            System.out.println("Hatalı giriş");
         }
-
-        System.out.println("Sonuç : " + result);
     }
 
     static void power() {
@@ -138,10 +112,7 @@ public class Main {
             System.out.println("Hatalı giriş");
         }
     }
-
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int select;
         String menu = "1- Toplama İşlemi\n"
                 + "2- Çıkarma İşlemi\n"
                 + "3- Çarpma İşlemi\n"
@@ -151,6 +122,8 @@ public class Main {
                 + "7- Mod Alma\n"
                 + "8- Dikdörtgen Alan ve Çevre Hesabı\n"
                 + "0- Çıkış Yap";
+        Scanner scan = new Scanner(System.in);
+        int select;
 
         do {
             System.out.println(menu);
@@ -176,15 +149,16 @@ public class Main {
                     factorial();
                     break;
                 case 7:
-                    modA(8,2);
-                   break;
+                    modA(0,0);
+                    break;
                 case 8:
                     dikdörtgenAlanCevre(0,0);
-                    case 0:
+                case 0:
                     break;
                 default:
                     System.out.println("Yanlış bir değer girdiniz, tekrar deneyiniz.");
             }
         } while (select != 0);
+
     }
 }
